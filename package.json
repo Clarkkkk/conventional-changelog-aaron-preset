@@ -1,0 +1,34 @@
+{
+  "name": "conventional-changelog-aaron-preset",
+  "version": "0.1.0",
+  "description": "A personal conventional-changelog preset",
+  "main": "index.js",
+  "keywords": [
+    "conventional-changelog",
+    "preset"
+  ],
+  "author": "Aaron Zhou",
+  "packageManager": "pnpm@8.6.3",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=14"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "release": "commit-and-tag-version"
+  },
+  "license": "MIT",
+  "files": [
+    "conventional-changelog.js",
+    "conventional-recommended-bump.js",
+    "index.js",
+    "parser-opts.js",
+    "writer-opts.js",
+    "templates"
+  ],
+  "devDependencies": {
+    "commit-and-tag-version": "^11.2.2"
+  }
+}

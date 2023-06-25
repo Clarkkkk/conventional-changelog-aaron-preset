@@ -1,0 +1,22 @@
+{{#if body}}
+
+### **Description**
+
+{{body}}
+
+{{/if}}
+{{#if notes}}
+{{#each notes}}
+
+### **{{title}}**
+
+{{text}}
+
+{{/each}}
+{{else}}
+{{~#if footer~}}
+
+{{footer}}
+
+{{~/if~}}
+{{/if}}
