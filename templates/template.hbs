@@ -22,9 +22,9 @@
     {{~@root.repoUrl}}
   {{~/if}}/
   {{~@root.commit}}/{{hash}}))
-{{~else}}
-  {{~shortHash}}
-{{~/if}}
+{{else}} 
+  ({{shortHash}})
+{{/if}}
     {{> commit}}
 {{/each}}
 {{/each}}

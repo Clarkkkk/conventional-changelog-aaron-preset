@@ -32,6 +32,9 @@ function getWriterOpts() {
       } else if (commit.type === 'perf') {
         commit.type = 'Performance Improvements'
       } else if (commit.type === 'chore') {
+        if (commit.scope === 'release') {
+          return
+        }
         commit.type = 'Chores'
       } else if (commit.type === 'style') {
         commit.type = 'Styles'
