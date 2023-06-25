@@ -8,6 +8,14 @@
     "preset"
   ],
   "author": "Aaron Zhou",
+  "homepage": "https://github.com/Clarkkkk/conventional-changelog-aaron-preset#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Clarkkkk/conventional-changelog-aaron-preset"
+  },
+  "bugs": {
+    "url": "https://github.com/Clarkkkk/conventional-changelog-aaron-preset/issues"
+  },
   "packageManager": "pnpm@8.6.3",
   "sideEffects": false,
   "engines": {
