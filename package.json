@@ -1,6 +1,6 @@
 {
   "name": "conventional-changelog-aaron-preset",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "A personal conventional-changelog preset",
   "main": "index.js",
   "keywords": [
@@ -25,7 +25,7 @@
     "access": "public"
   },
   "scripts": {
-    "release": "commit-and-tag-version"
+    "release": "commit-and-tag-version --preset=angular"
   },
   "license": "MIT",
   "files": [

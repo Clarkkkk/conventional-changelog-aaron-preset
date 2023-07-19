@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+# [0.2.0](https://github.com/Clarkkkk/conventional-changelog-aaron-preset/compare/v0.1.2...v0.2.0) (2023-07-19)
+
+
+### Features
+
+* sort commit groups manually ([7a8902a](https://github.com/Clarkkkk/conventional-changelog-aaron-preset/commit/7a8902a5e89aecada8d441b9a51f379e5a3ee760))
+
+
+
 ## [0.1.2](https://github.com/Clarkkkk/conventional-changelog-aaron-preset/compare/v0.1.1...v0.1.2) (2023-06-25)
 
 
