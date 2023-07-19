@@ -84,7 +84,16 @@ function getWriterOpts() {
       return commit
     },
     groupBy: 'type',
-    commitGroupsSort: 'title',
+    commitGroupsSort: (a, b) => {
+      const commitGroupOrder = ['Features', 'Bug Fixes', 'Styles', 'Documentation', 'Chores']
+      const gRankA = commitGroupOrder.indexOf(a.title)
+      const gRankB = commitGroupOrder.indexOf(b.title)
+      if (gRankA >= gRankB) {
+        return -1
+      } else {
+        return 1
+      }
+    },
     commitsSort: (a, b) => {
       return new Date(b.committerDate) - new Date(a.committerDate)
     }
