@@ -85,7 +85,7 @@ function getWriterOpts() {
     },
     groupBy: 'type',
     commitGroupsSort: (a, b) => {
-      const commitGroupOrder = ['Features', 'Bug Fixes', 'Styles', 'Documentation', 'Chores']
+      const commitGroupOrder = ['Features', 'Bug Fixes', 'Styles', 'Refactor', 'Performance Improvements', 'Documentation', 'Test', 'Chores']
       const gRankA = commitGroupOrder.indexOf(a.title)
       const gRankB = commitGroupOrder.indexOf(b.title)
       if (gRankA < gRankB) {
