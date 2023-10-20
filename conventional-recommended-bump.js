@@ -1,13 +1,15 @@
 'use strict'
 
 module.exports = {
-  whatBump: commits => {
+  whatBump: (commits) => {
     let level = 2
     let breakings = 0
     let features = 0
 
-    commits.forEach(commit => {
-      const breakingLength = commit.notes.filter((item) => item.title !== 'Dependencies Changes').length
+    commits.forEach((commit) => {
+      const breakingLength = commit.notes.filter(
+        (item) => item.title !== 'Dependencies Changes'
+      ).length
       if (breakingLength > 0) {
         breakings += breakingLength
         level = 0
@@ -20,7 +22,7 @@ module.exports = {
     })
 
     return {
-      level: level,
+      level,
       reason: `There are ${breakings} breaking changes and ${features} features`
     }
   }

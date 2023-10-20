@@ -7,23 +7,22 @@ module.exports = Promise.all([
   readFile(resolve(__dirname, './templates/template.hbs'), 'utf-8'),
   readFile(resolve(__dirname, './templates/header.hbs'), 'utf-8'),
   readFile(resolve(__dirname, './templates/commit.hbs'), 'utf-8')
-])
-  .then(([template, header, commit]) => {
-    const writerOpts = getWriterOpts()
+]).then(([template, header, commit]) => {
+  const writerOpts = getWriterOpts()
 
-    writerOpts.mainTemplate = template
-    writerOpts.headerPartial = header
-    writerOpts.commitPartial = commit
+  writerOpts.mainTemplate = template
+  writerOpts.headerPartial = header
+  writerOpts.commitPartial = commit
 
-    return writerOpts
-  })
+  return writerOpts
+})
 
 function getWriterOpts() {
   return {
     transform: (commit, context) => {
       const issues = []
       if (!commit.type || typeof commit.type !== 'string') {
-        return
+        return undefined
       }
 
       if (commit.type === 'feat') {
@@ -34,7 +33,7 @@ function getWriterOpts() {
         commit.type = 'Performance Improvements'
       } else if (commit.type === 'chore') {
         if (commit.scope === 'release') {
-          return
+          return undefined
         }
         commit.type = 'Chores'
       } else if (commit.type === 'style') {
@@ -63,18 +62,21 @@ function getWriterOpts() {
         }
         if (context.host) {
           // User URLs.
-          commit.subject = commit.subject.replace(/\B@([a-z0-9](?:-?[a-z0-9/]){0,38})/g, (_, username) => {
-            if (username.includes('/')) {
-              return `@${username}`
-            }
+          commit.subject = commit.subject.replace(
+            /\B@([a-z0-9](?:-?[a-z0-9/]){0,38})/g,
+            (_, username) => {
+              if (username.includes('/')) {
+                return `@${username}`
+              }
 
-            return `[@${username}](${context.host}/${username})`
-          })
+              return `[@${username}](${context.host}/${username})`
+            }
+          )
         }
       }
 
       // remove references that already appear in the subject
-      commit.references = commit.references.filter(reference => {
+      commit.references = commit.references.filter((reference) => {
         if (issues.indexOf(reference.issue) === -1) {
           return true
         }
@@ -86,7 +88,16 @@ function getWriterOpts() {
     },
     groupBy: 'type',
     commitGroupsSort: (a, b) => {
-      const commitGroupOrder = ['Features', 'Bug Fixes', 'Styles', 'Refactor', 'Performance Improvements', 'Documentation', 'Test', 'Chores']
+      const commitGroupOrder = [
+        'Features',
+        'Bug Fixes',
+        'Styles',
+        'Refactor',
+        'Performance Improvements',
+        'Documentation',
+        'Test',
+        'Chores'
+      ]
       const gRankA = commitGroupOrder.indexOf(a.title)
       const gRankB = commitGroupOrder.indexOf(b.title)
       if (gRankA < gRankB) {

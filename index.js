@@ -7,13 +7,14 @@ const writerOpts = require('./writer-opts')
 module.exports = presetOpts
 
 function presetOpts(cb) {
-  Promise.all([conventionalChangelog, parserOpts, recommendedBumpOpts, writerOpts])
-    .then(([conventionalChangelog, parserOpts, recommendedBumpOpts, writerOpts]) => {
+  Promise.all([conventionalChangelog, parserOpts, recommendedBumpOpts, writerOpts]).then(
+    ([conventionalChangelog, parserOpts, recommendedBumpOpts, writerOpts]) => {
       cb(null, {
         conventionalChangelog,
         parserOpts,
         recommendedBumpOpts,
         writerOpts
       })
-    })
+    }
+  )
 }

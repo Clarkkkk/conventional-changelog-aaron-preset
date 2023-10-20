@@ -25,6 +25,8 @@
     "access": "public"
   },
   "scripts": {
+    "prepare": "husky install",
+    "format": "eslint --fix --cache ./*.{js,ts}",
     "release": "commit-and-tag-version --preset=angular"
   },
   "license": "MIT",
@@ -37,6 +39,16 @@
     "templates"
   ],
   "devDependencies": {
-    "commit-and-tag-version": "^11.2.2"
+    "commit-and-tag-version": "^11.2.2",
+    "eslint": "^8.51.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "prettier": "^3.0.3"
+  },
+  "dependencies": {
+    "husky": "^8.0.3",
+    "lint-staged": "^15.0.2"
   }
 }
