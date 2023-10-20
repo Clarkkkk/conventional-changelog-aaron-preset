@@ -1,6 +1,6 @@
 {
   "name": "conventional-changelog-aaron-preset",
-  "version": "0.2.2",
+  "version": "1.0.0",
   "description": "A personal conventional-changelog preset",
   "type": "module",
   "main": "index.js",
