@@ -22,7 +22,8 @@ export async function createWriterOpts() {
 
 function getWriterOpts() {
   return {
-    transform: (commit) => {
+    transform: (commit, context) => {
+      const issues = []
       if (!commit.type || typeof commit.type !== 'string') {
         return
       }
