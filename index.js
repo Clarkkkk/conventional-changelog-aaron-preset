@@ -1,7 +1,7 @@
-import { createParserOpts } from './parser-opts.js'
-import { createWriterOpts } from './writer-opts.js'
 import { createConventionalChangelogOpts } from './conventional-changelog.js'
 import { createConventionalRecommendedBumpOpts } from './conventional-recommended-bump.js'
+import { createParserOpts } from './parser-opts.js'
+import { createWriterOpts } from './writer-opts.js'
 
 export default async function () {
   const parserOpts = createParserOpts()
