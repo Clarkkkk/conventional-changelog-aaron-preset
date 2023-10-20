@@ -8,14 +8,15 @@ Note: The latest version supports conventional-changelog v5 only. If you are usi
 
 - Different commit types (feat, fix, perf, chore, style, docs, refactor, test)
 - Commit types renaming and sorting (order: 'Features', 'Bug Fixes', 'Styles', 'Refactor', 'Performance Improvements', 'Documentation', 'Test', 'Chores')
-- description scope
-- Do not support auto links for issue close (i.e. missing `close [#123](issue link)`)
-- Do not support revert description
+- Description scope (see below)
+- Remove revert description
 
 ## Usage
 
 ```sh
 npm i -D conventional-changelog conventional-changelog-aaron-preset conventional-recommended-bump
+
+npx conventional-changelog -o CHANGELOG.md -p aaron-preset -r 0
 ```
 
 ## Format
