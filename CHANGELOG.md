@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.0.3](https://github.com/Clarkkkk/conventional-changelog-aaron-preset/compare/v1.0.2...v1.0.3) (2023-10-20)
+
+
+### Bug Fixes
+
+* move all deps to devDependencies ([0f78d34](https://github.com/Clarkkkk/conventional-changelog-aaron-preset/commit/0f78d342288584531ad13db1ecd1ed00640f8a0a))
+
+
+
 ## [1.0.2](https://github.com/Clarkkkk/conventional-changelog-aaron-preset/compare/v1.0.1...v1.0.2) (2023-10-20)
 
 
