@@ -1,19 +1,18 @@
-'use strict'
-const conventionalChangelog = require('./conventional-changelog')
-const parserOpts = require('./parser-opts')
-const recommendedBumpOpts = require('./conventional-recommended-bump')
-const writerOpts = require('./writer-opts')
+import { createParserOpts } from './parser-opts.js'
+import { createWriterOpts } from './writer-opts.js'
+import { createConventionalChangelogOpts } from './conventional-changelog.js'
+import { createConventionalRecommendedBumpOpts } from './conventional-recommended-bump.js'
 
-module.exports = presetOpts
+export default async function () {
+  const parserOpts = createParserOpts()
+  const writerOpts = await createWriterOpts()
+  const recommendedBumpOpts = createConventionalRecommendedBumpOpts(parserOpts)
+  const conventionalChangelog = createConventionalChangelogOpts(parserOpts, writerOpts)
 
-function presetOpts(cb) {
-  Promise.all([conventionalChangelog, parserOpts, recommendedBumpOpts, writerOpts])
-    .then(([conventionalChangelog, parserOpts, recommendedBumpOpts, writerOpts]) => {
-      cb(null, {
-        conventionalChangelog,
-        parserOpts,
-        recommendedBumpOpts,
-        writerOpts
-      })
-    })
+  return {
+    parserOpts,
+    writerOpts,
+    recommendedBumpOpts,
+    conventionalChangelog
+  }
 }

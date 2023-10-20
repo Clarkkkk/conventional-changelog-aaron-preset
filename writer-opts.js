@@ -1,22 +1,24 @@
-'use strict'
+import { readFile } from 'fs/promises'
+import { resolve } from 'path'
+import { fileURLToPath } from 'url'
 
-const { readFile } = require('fs').promises
-const { resolve } = require('path')
+const dirname = fileURLToPath(new URL('.', import.meta.url))
 
-module.exports = Promise.all([
-  readFile(resolve(__dirname, './templates/template.hbs'), 'utf-8'),
-  readFile(resolve(__dirname, './templates/header.hbs'), 'utf-8'),
-  readFile(resolve(__dirname, './templates/commit.hbs'), 'utf-8')
-])
-  .then(([template, header, commit]) => {
-    const writerOpts = getWriterOpts()
+export async function createWriterOpts() {
+  const [template, header, commit] = Promise.all([
+    readFile(resolve(dirname, './templates/template.hbs'), 'utf-8'),
+    readFile(resolve(dirname, './templates/header.hbs'), 'utf-8'),
+    readFile(resolve(dirname, './templates/commit.hbs'), 'utf-8')
+  ])
 
-    writerOpts.mainTemplate = template
-    writerOpts.headerPartial = header
-    writerOpts.commitPartial = commit
+  const writerOpts = getWriterOpts()
 
-    return writerOpts
-  })
+  writerOpts.mainTemplate = template
+  writerOpts.headerPartial = header
+  writerOpts.commitPartial = commit
+
+  return writerOpts
+}
 
 function getWriterOpts() {
   return {
