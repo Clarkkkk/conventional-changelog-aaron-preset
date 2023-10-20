@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.0.1](https://github.com/Clarkkkk/conventional-changelog-aaron-preset/compare/v1.0.0...v1.0.1) (2023-10-20)
+
+
+### Bug Fixes
+
+* add missing await ([669ad8e](https://github.com/Clarkkkk/conventional-changelog-aaron-preset/commit/669ad8e594d97c9d91d3ee2367bc89ddc8ea221f))
+
+
+
 # [1.0.0](https://github.com/Clarkkkk/conventional-changelog-aaron-preset/compare/v0.2.2...v1.0.0) (2023-10-20)
 
 
