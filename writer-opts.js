@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url'
 const dirname = fileURLToPath(new URL('.', import.meta.url))
 
 export async function createWriterOpts() {
-  const [template, header, commit] = Promise.all([
+  const [template, header, commit] = await Promise.all([
     readFile(resolve(dirname, './templates/template.hbs'), 'utf-8'),
     readFile(resolve(dirname, './templates/header.hbs'), 'utf-8'),
     readFile(resolve(dirname, './templates/commit.hbs'), 'utf-8')
