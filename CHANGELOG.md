@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.2.3](https://github.com/Clarkkkk/conventional-changelog-aaron-preset/compare/v0.2.2...v0.2.3) (2024-02-17)
+
+
+### Bug Fixes
+
+* add missing variables ([d789afe](https://github.com/Clarkkkk/conventional-changelog-aaron-preset/commit/d789afe5c801c5c7bb556540702a6f6164788b02))
+* fix errors during actions ([ae34dbd](https://github.com/Clarkkkk/conventional-changelog-aaron-preset/commit/ae34dbd06c2e39739f484245a9c3918133d4d77d))
+* move all deps to devDependencies ([9b22b80](https://github.com/Clarkkkk/conventional-changelog-aaron-preset/commit/9b22b806bf7aa44da6cde9a84c44e9add48fdb5d))
+
+
+
 ## [0.2.2](https://github.com/Clarkkkk/conventional-changelog-aaron-preset/compare/v0.2.1...v0.2.2) (2023-07-21)
 
 
