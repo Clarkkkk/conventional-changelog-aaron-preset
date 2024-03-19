@@ -7,7 +7,7 @@
 
 {{/if}}
 {{#each commits}}
-* {{this.message}}
+* {{#if scope}}**{{this.scope}}**: {{/if}}{{this.message}}
 {{~!-- commit link --}} {{#if @root.linkReferences~}}
   ([{{shortHash}}](
   {{~#if @root.repository}}
