@@ -2,7 +2,7 @@
 
 This is a conventional-changelog preset for personal use, forked from [conventional-changelog-angular]([conventional-changelog-angular](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-angular)).
 
-Note: The latest version supports conventional-changelog v5 only. If you are using v4 and below, please use v0.2.3
+Note: The latest version supports conventional-changelog v5 only. If you are using v4 and below, please use v0.3.0
 
 ## Features and difference
 
